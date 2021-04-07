@@ -1,0 +1,20 @@
+
+  
+  a, h3, p, body { 
+    font-family: Avenir, Open Sans;
+  }
+
+  h1, h2, h3, h4 {
+      text-transform: uppercase;
+  }
+
+  h2 {
+      text-align: center;
+      position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+
+    @media (max-width:768px) {
+        margin-bottom: 10px;
+      }
+}

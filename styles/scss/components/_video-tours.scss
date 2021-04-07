@@ -1,0 +1,174 @@
+.vt-slideshow {
+  margin-top: 200px;
+  margin-bottom: 70px;
+
+  @media (max-width:1060px) {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width:768px) {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+}
+
+.carousel {
+  position: relative;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+  margin-top: 26px;
+
+  &.aerial-videos {
+    margin-bottom: 10px;
+    box-shadow: none;
+  }
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+  animation: hideVideo 0.6s forwards;
+  display: block;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  animation: hideVideo 0.6s forwards;
+  height: 600px;
+
+  @media (max-width:960px) {
+    height: 500px;
+  }
+
+  @media (max-width:768px) {
+    height: 400px;
+  }
+
+  @media (max-width:600px) {
+    height: 300px;
+  }
+
+  @media (max-width:450px) {
+    height: 200px;
+  }
+}
+
+@keyframes showVideo {
+  0% { opacity: 0; display: none; }
+  1% { opacity: 0; display: block; }
+  100% { opacity: 100; }
+}
+
+@keyframes hideVideo {
+  0% { opacity: 100;  display: block; }
+  99% { opacity: 0; }
+  100% { opacity: 100;  display: none; }
+}
+
+.carousel-item iframe {
+  height: 600px;
+  width: 100%;
+
+  @media (max-width:960px) {
+    height: 500px;
+  }
+
+  @media (max-width:768px) {
+    height: 400px;
+  }
+
+  @media (max-width:600px) {
+    height: 300px;
+  }
+
+  @media (max-width:450px) {
+    height: 200px;
+  }
+
+}
+
+.carousel-control {
+  background: #D6B240;
+  color: #000;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  height: 40px;
+  line-height: 35px;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  text-align: center;
+  width: 40px;
+  z-index: 4;
+}
+
+.carousel-control.prev {
+  right: 40px;
+}
+
+.carousel-control.next {
+  right: 0;
+}
+
+.carousel-control:hover {
+  background: #EDC33E;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3,
+#carousel-4:checked ~ .control-4,
+#carousel-5:checked ~ .control-5 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+  text-align: center;
+  z-index: 4;
+  background: #FFF;
+  height: 40px;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-bullet span{
+  width: 10px;
+           height: 10px;
+           border: 1px solid #D6B240;
+           border-radius: 50%;
+           position: relative;
+           display: block;
+           cursor: pointer;
+
+           &:hover {
+            background: #D6B240;
+           }
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet span,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet span,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet span,
+#carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet span,
+#carousel-5:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet span {
+  background: #D6B240;
+}
